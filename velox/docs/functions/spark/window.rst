@@ -4,6 +4,8 @@ Window functions
 
 Spark window functions can be used to compute SQL window functions.
 
+More details about window functions can be found at :doc:`../../../develop/window`
+
 Value functions
 ---------------
 
