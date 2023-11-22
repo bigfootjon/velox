@@ -554,6 +554,7 @@ jobs:
               git config --global user.email "velox@users.noreply.github.com"
               git config --global user.name "velox"
               git checkout main
+              git pull
               conda init bash
               source ~/.bashrc
               conda create -y --name docgenenv python=3.7
