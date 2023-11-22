@@ -63,7 +63,9 @@ add_executable(
   RowContainerTest.cpp
   RowNumberTest.cpp
   MarkDistinctTest.cpp
+  SetAccumulatorTest.cpp
   SharedArbitratorTest.cpp
+  SortBufferTest.cpp
   SpillTest.cpp
   SpillOperatorGroupTest.cpp
   SpillerTest.cpp
@@ -80,8 +82,7 @@ add_executable(
   UnnestTest.cpp
   VectorHasherTest.cpp
   ValuesTest.cpp
-  WindowFunctionRegistryTest.cpp
-  SortBufferTest.cpp)
+  WindowFunctionRegistryTest.cpp)
 
 add_executable(
   velox_exec_infra_test
