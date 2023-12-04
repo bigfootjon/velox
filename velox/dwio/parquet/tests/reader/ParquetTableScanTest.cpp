@@ -41,7 +41,8 @@ class ParquetTableScanTest : public HiveConnectorTestBase {
     auto hiveConnector =
         connector::getConnectorFactory(
             connector::hive::HiveConnectorFactory::kHiveConnectorName)
-            ->newConnector(kHiveConnectorId, nullptr);
+            ->newConnector(
+                kHiveConnectorId, std::make_shared<core::MemConfig>());
     connector::registerConnector(hiveConnector);
   }
 
@@ -416,7 +417,7 @@ TEST_F(ParquetTableScanTest, readAsLowerCase) {
       {std::string(
            connector::hive::HiveConfig::kFileColumnNamesReadAsLowerCase),
        "true"}};
-  queryCtx->setConnectorConfigOverridesUnsafe(
+  queryCtx->setConnectorSessionOverridesUnsafe(
       kHiveConnectorId, std::move(configs));
   params.queryCtx = queryCtx;
   params.planNode = plan;
